@@ -4,6 +4,6 @@ from ..serializers import *
 from ..Models.userModel import Users
 
 
-class UsersViewSet(viewsets.ModelViewSet):
+class UserViewSet(viewsets.ModelViewSet):
     queryset = Users.objects.all()
-    serializer_class = UsersSerializer
+    serializer_class = UserSerializer

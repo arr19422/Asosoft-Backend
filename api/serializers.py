@@ -23,7 +23,7 @@ class TournamentSerializer(serializers.ModelSerializer):
         fields = ['id', 'name']
 
 
-class UsersSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Users
         fields = ['id', 'name', 'last_name', 'email', 'team']

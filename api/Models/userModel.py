@@ -8,3 +8,6 @@ class Users(models.Model):
     email = models.CharField(max_length=32, blank=False)
     team = models.ForeignKey(Team, on_delete=models.CASCADE, blank=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, default=None)
+
+    def __str__(self):
+        return self.user
