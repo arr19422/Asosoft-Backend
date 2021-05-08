@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from ..serializers import *
 from ..Models.teamModel import Team
+from ..Serializers.teamSerializer import TeamSerializer
 
 
 class TeamViewSet(viewsets.ModelViewSet):
