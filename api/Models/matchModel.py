@@ -10,4 +10,4 @@ class Match(models.Model):
     tournament = models.ForeignKey(Tournament, on_delete=models.CASCADE, blank=False)
 
     def __str__(self):
-        return (self.local_team + ' vs ' + self.visiting_team)
+        return self.local_team.team_name + ' vs ' + self.visiting_team.team_name + ' | ' + str(self.match_date)
