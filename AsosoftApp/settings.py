@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-%sqcnpz5@fo+2+u8#i2v6k9vdi_g3-&2c69yrpux@38&7&(qws
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ec2-18-218-130-213.us-east-2.compute.amazonaws.com', '18.188.133.54']
+ALLOWED_HOSTS = ['ec2-18-218-130-213.us-east-2.compute.amazonaws.com', '18.188.133.54', '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -76,6 +76,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ]
 }
+
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
