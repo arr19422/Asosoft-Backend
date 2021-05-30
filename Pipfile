@@ -7,6 +7,9 @@ name = "pypi"
 django = "*"
 djangorestframework = "*"
 psycopg2 = "*"
+boto3 = "*"
+django-storages = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

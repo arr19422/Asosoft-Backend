@@ -36,7 +36,7 @@ class TournamentAdmin(admin.ModelAdmin):
 
 @admin.register(Asociation)
 class AsociationAdmin(admin.ModelAdmin):
-    fields = ['name']
+    fields = ['name', 'photo']
 
 
 @admin.register(Athlete)
