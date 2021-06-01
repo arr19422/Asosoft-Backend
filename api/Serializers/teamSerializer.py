@@ -5,4 +5,4 @@ from ..Models.teamModel import Team
 class TeamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Team
-        fields = ['id', 'team_name', 'team_description']
+        fields = ['id', 'team_name', 'team_description', 'team_image']

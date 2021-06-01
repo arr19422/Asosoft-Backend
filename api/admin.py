@@ -6,6 +6,7 @@ from .Models.tournamentModel import Tournament
 from .Models.asociationModel import Asociation
 from .Models.athleteModel import Athlete
 from .Models.userModel import Users
+from .Models.newsModel import News
 
 admin.site.site_header = 'ASOSOFT Admin'
 admin.site.site_title = 'Administracion de ASOSOFT App'
@@ -19,19 +20,20 @@ class UsersAdmin(admin.ModelAdmin):
 
 @admin.register(Match)
 class MatchAdmin(admin.ModelAdmin):
-    fields = ['match_date', 'local_team', 'visiting_team', 'tournament', 'start_time', 'end_time', 'match_place',
-              'facebook_link', 'youtube_link', 'local_score', 'visiting_score', 'match_type', 'access_ticket']
+    fields = ['match_date', 'journey', 'local_team', 'visiting_team', 'tournament', 'start_time',
+              'end_time', 'match_place', 'facebook_link', 'youtube_link', 'local_score', 'visiting_score',
+              'match_type', 'access_ticket', 'match_parking']
 
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
-    fields = ['team_name', 'team_description']
+    fields = ['team_name', 'team_description', 'team_image']
 
 
 @admin.register(Tournament)
 class TournamentAdmin(admin.ModelAdmin):
-    fields = ['name', 'category', 'tournament_logo', 'country', 'current_date', 'total_dates', 'start_date', 'end_date',
-              'teams']
+    fields = ['tournament_name', 'tournament_category', 'tournament_country', 'tournament_winner',
+                  'current_date', 'total_dates', 'start_date', 'end_date', 'teams']
 
 
 @admin.register(Asociation)
@@ -41,6 +43,11 @@ class AsociationAdmin(admin.ModelAdmin):
 
 @admin.register(Athlete)
 class AthletAdmin(admin.ModelAdmin):
-    fields = ['biography', 'wins', 'loses', 'games', 'contact', 'asociation', 'team']
+    fields = ['athlete_name','biography', 'wins', 'loses', 'games', 'contact', 'asociation', 'team', 'shirt_number']
+
+
+@admin.register(News)
+class NewsAdmin(admin.ModelAdmin):
+    fields = ['news_title', 'news_preview', 'news_description', 'news_image']
 
 
