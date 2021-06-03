@@ -8,7 +8,7 @@ from datetime import *
 class Match(models.Model):
     match_date = models.DateField(blank=False)
     journey = models.IntegerField(blank=False, default=1)
-    local_team = models.ForeignKey(Team, on_delete=models.CASCADE, blank=False, related_name='local_teams')
+    local_team = models.ForeignKey(Team, on_delete=models.CASCADE, blank=False, related_name='local_team')
     visiting_team = models.ForeignKey(Team, on_delete=models.CASCADE, blank=False, related_name='visiting_teams')
     tournament = models.ForeignKey(Tournament, on_delete=models.CASCADE, blank=False)
     start_time = models.DateTimeField(auto_now=False, auto_now_add=False, blank=True, default=datetime.now)

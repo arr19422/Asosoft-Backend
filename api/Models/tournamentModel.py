@@ -13,7 +13,7 @@ class Tournament(models.Model):
     total_dates = models.IntegerField(blank=False, default=0)
     start_date = models.DateField(blank=False, default=datetime.now)
     end_date = models.DateField(blank=False, default=datetime.now)
-    teams = models.ManyToManyField(Team)
+    teams = models.ManyToManyField(Team, related_name='teams')
 
     def __str__(self):
         return self.tournament_name + '|' + self.tournament_category
