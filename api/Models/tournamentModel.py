@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import *
 from ..Models.teamModel import Team
+from ..Models.asociationModel import Asociation
 
 
 class Tournament(models.Model):
@@ -14,6 +15,7 @@ class Tournament(models.Model):
     start_date = models.DateField(blank=False, default=datetime.now)
     end_date = models.DateField(blank=False, default=datetime.now)
     teams = models.ManyToManyField(Team, related_name='teams')
+    association = models.ForeignKey(Asociation, on_delete=models.CASCADE, blank=False, null=True)
 
     def __str__(self):
         return self.tournament_name + '|' + self.tournament_category

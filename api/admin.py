@@ -33,7 +33,7 @@ class TeamAdmin(admin.ModelAdmin):
 @admin.register(Tournament)
 class TournamentAdmin(admin.ModelAdmin):
     fields = ['tournament_name', 'tournament_category', 'tournament_country', 'tournament_winner',
-                  'current_date', 'total_dates', 'start_date', 'end_date', 'teams']
+                  'current_date', 'total_dates', 'start_date', 'end_date', 'teams', 'association']
 
 
 @admin.register(Asociation)
@@ -48,6 +48,6 @@ class AthletAdmin(admin.ModelAdmin):
 
 @admin.register(News)
 class NewsAdmin(admin.ModelAdmin):
-    fields = ['news_title', 'news_preview', 'news_description', 'news_image']
+    fields = ['news_title', 'news_preview', 'news_description', 'news_image', 'association']
 
 
