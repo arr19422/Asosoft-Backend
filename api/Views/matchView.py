@@ -13,18 +13,31 @@ class MatchViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['GET'])
     def past_matches(self, request):
-        tournament_id = request.GET.get('event_id', 2)
+        tournament_id = request.GET.get('event_id')
         today = datetime.datetime.today()
-        queryset = Match.objects.filter(match_date__lt=today).values('id', 'local_team', 'visiting_team', 'match_date', 'local_score',
-                                                 'visiting_score', 'start_time')
+        queryset = Match.objects.filter(match_date__lt=today).filter(tournament__pk=tournament_id)
         serializer = PastMatchSerializer(queryset, many=True)
         return Response(serializer.data)
 
     @action(detail=False, methods=['GET'])
-    def prueba(self, request):
+    def next_matches(self, request):
         tournament_id = request.GET.get('event_id')
         today = datetime.datetime.today()
-        queryset = Match.objects.filter(match_date__lt=today).filter(tournament__pk=tournament_id)\
-            .values('id', 'match_date', 'local_score', 'visiting_score', 'start_time')
+        queryset = Match.objects.filter(match_date__gt=today).filter(tournament__pk=tournament_id)
         serializer = PastMatchSerializer(queryset, many=True)
         return Response(serializer.data)
+
+    @action(detail=False, methods=['GET'])
+    def upcoming_match(self, request):
+        match_id = request.GET.get('match_id')
+        queryset = Match.objects.filter(id=match_id)
+        serializer = UpcomingMatchSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+    @action(detail=False, methods=['GET'])
+    def finished_match(self, request):
+        match_id = request.GET.get('match_id')
+        queryset = Match.objects.filter(id=match_id)
+        serializer = FinishedMatchSerializer(queryset, many=True)
+        return Response(serializer.data)
+
