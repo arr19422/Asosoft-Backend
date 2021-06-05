@@ -5,4 +5,5 @@ from ..Models.athleteModel import Athlete
 class AthleteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Athlete
-        fields = ['id', 'athlete_name', 'biography', 'wins', 'loses', 'games', 'contact', 'asociation', 'team', 'shirt_number']
+        fields = ['id', 'athlete_name', 'biography', 'wins', 'loses', 'games', 'contact', 'asociation', 'team',
+                  'shirt_number', 'instagram', 'facebook', 'email', 'country']

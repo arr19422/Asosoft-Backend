@@ -17,7 +17,8 @@ class TournamentViewSet(viewsets.ModelViewSet):
         association_id = request.GET.get('association_id')
         today = datetime.datetime.today()
         queryset = Tournament.objects.filter(end_date__lt=today).filter(association=association_id)\
-            .values('id', 'tournament_name', 'tournament_category', 'tournament_winner', 'end_date')
+            .values('id', 'tournament_name', 'tournament_category', 'tournament_winner', 'end_date')\
+            .order_by('end_date')
         serializer = PastTournamentSerializer(queryset, many=True)
         return Response(serializer.data)
 
@@ -28,7 +29,8 @@ class TournamentViewSet(viewsets.ModelViewSet):
         criterion1 = Q(start_date__lte=today)
         criterion2 = Q(end_date__gte=today)
         queryset = Tournament.objects.filter(criterion1 & criterion2).filter(association=association_id)\
-            .values('id', 'tournament_name', 'tournament_category', 'current_date', 'total_dates', 'end_date')
+            .values('id', 'tournament_name', 'tournament_category', 'current_date', 'total_dates', 'end_date')\
+            .order_by('start_date')
         serializer = CurrentTournamentSerializer(queryset, many=True)
         return Response(serializer.data)
 
@@ -37,7 +39,8 @@ class TournamentViewSet(viewsets.ModelViewSet):
         association_id = request.GET.get('association_id')
         today = datetime.datetime.today()
         queryset = Tournament.objects.filter(start_date__gt=today).filter(association=association_id)\
-            .values('id', 'tournament_name', 'tournament_category', 'tournament_country', 'start_date')
+            .values('id', 'tournament_name', 'tournament_category', 'tournament_country', 'start_date')\
+            .order_by('-start_date')
         serializer = FutureTournamentSerializer(queryset, many=True)
         return Response(serializer.data)
 

@@ -7,6 +7,7 @@ from .Models.asociationModel import Asociation
 from .Models.athleteModel import Athlete
 from .Models.userModel import Users
 from .Models.newsModel import News
+from .Models.playersMatchModel import PlayersMatch
 
 admin.site.site_header = 'ASOSOFT Admin'
 admin.site.site_title = 'Administracion de ASOSOFT App'
@@ -43,11 +44,17 @@ class AsociationAdmin(admin.ModelAdmin):
 
 @admin.register(Athlete)
 class AthletAdmin(admin.ModelAdmin):
-    fields = ['athlete_name','biography', 'wins', 'loses', 'games', 'contact', 'asociation', 'team', 'shirt_number']
+    fields = ['id', 'athlete_name', 'biography', 'wins', 'loses', 'games', 'contact', 'asociation', 'team',
+              'shirt_number', 'instagram', 'facebook', 'email', 'country']
 
 
 @admin.register(News)
 class NewsAdmin(admin.ModelAdmin):
     fields = ['news_title', 'news_preview', 'news_description', 'news_image', 'association']
+
+
+@admin.register(PlayersMatch)
+class PlayersMatchAdmin(admin.ModelAdmin):
+    fields = ['match_played', 'team', 'athlete']
 
 

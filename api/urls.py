@@ -10,6 +10,7 @@ from .Views.tournamentView import TournamentViewSet
 from .Views.athleteView import AthleteViewSet
 from .Views.asociationView import AsociationViewSet
 from .Views.newsView import NewsViewSet
+from .Views.playersMatchView import PlayersMatchViewSet
 from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
@@ -20,6 +21,7 @@ router.register('tournaments', TournamentViewSet)
 router.register('athletes', AthleteViewSet)
 router.register('asociations', AsociationViewSet)
 router.register('news', NewsViewSet)
+router.register('players_match', PlayersMatchViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
