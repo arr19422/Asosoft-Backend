@@ -25,6 +25,7 @@ class AsociationViewSet(viewsets.ModelViewSet):
             print(tournaments_list)
             sport_results = len(Match.objects.filter(match_date__lt=today).filter(tournament__in=tournaments_list))
             response[i.id] = {
+                'id': i.id,
                 'sport': i.name,
                 'photo': str(i.photo),
                 'news': sport_news,

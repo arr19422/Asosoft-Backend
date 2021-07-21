@@ -16,8 +16,8 @@ class Match(models.Model):
     match_place = models.CharField(max_length=32, blank=False, default="")
     facebook_link = models.URLField(blank=True)
     youtube_link = models.URLField(blank=True)
-    local_score = models.IntegerField(blank=False, default=0)
-    visiting_score = models.IntegerField(blank=False, default=0)
+    local_score = models.IntegerField(blank=True, default=None, null=True)
+    visiting_score = models.IntegerField(blank=True, default=None, null=True)
     match_types = [
         ('Amistoso', 'Amistoso'),
         ('Torneo', 'Torneo'),
@@ -29,4 +29,5 @@ class Match(models.Model):
     match_parking = models.TextField(max_length=300, blank=False, default='no')
 
     def __str__(self):
-        return self.local_team.team_name + ' vs ' + self.visiting_team.team_name + ' | ' + str(self.match_date)
+        return self.local_team.team_name + ' vs ' + self.visiting_team.team_name + ' | ' + str(self.match_date) \
+               + ' | ' + self.tournament.tournament_name + ' | ' + self.tournament.tournament_category

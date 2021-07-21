@@ -41,3 +41,5 @@ class MatchViewSet(viewsets.ModelViewSet):
         serializer = FinishedMatchSerializer(queryset, many=True)
         return Response(serializer.data)
 
+
+
