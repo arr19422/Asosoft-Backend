@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
 
 
 load_dotenv()
