@@ -1,1 +1,1 @@
-web:gunicorn AsosoftApp.wsgi
+web: gunicorn AsosoftApp.wsgi
