@@ -98,7 +98,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'asosoft_1',
         'USER': 'asosoftapp',
-        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+        'PASSWORD': 'g4w!qQFE&J!',
         'HOST': 'asosoft-database.ctrib6nqfx1d.us-east-1.rds.amazonaws.com',
         'PORT': '5432'
     }
