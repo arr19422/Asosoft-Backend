@@ -35,7 +35,7 @@ AWS_S3_REGION_NAME = 'us-east-1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://asosoft-api.herokuapp.com', 'ec2-18-218-130-213.us-east-2.compute.amazonaws.com', '18.188.133.54', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['asosoft-api.herokuapp.com', 'ec2-18-218-130-213.us-east-2.compute.amazonaws.com', '18.188.133.54', '127.0.0.1', 'localhost']
 
 # Application definition
 
