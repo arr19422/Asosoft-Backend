@@ -11,10 +11,11 @@ from .Views.athleteView import AthleteViewSet
 from .Views.asociationView import AsociationViewSet
 from .Views.newsView import NewsViewSet
 from .Views.playersMatchView import PlayersMatchViewSet
+from .Views.userView import UserViewSet
 from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
-router.register('users', CustomUserViewSet)
+router.register('users', UserViewSet)
 router.register('matches', MatchViewSet)
 router.register('teams', TeamViewSet)
 router.register('tournaments', TournamentViewSet)
