@@ -44,7 +44,7 @@ class AsociationAdmin(admin.ModelAdmin):
 
 @admin.register(Athlete)
 class AthletAdmin(admin.ModelAdmin):
-    fields = ['id', 'athlete_name', 'biography', 'wins', 'loses', 'games', 'contact', 'asociation', 'team',
+    fields = ['athlete_name', 'biography', 'wins', 'loses', 'games', 'contact', 'asociation', 'team',
               'shirt_number', 'instagram', 'facebook', 'email', 'country']
 
 
