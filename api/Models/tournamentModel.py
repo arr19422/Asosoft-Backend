@@ -8,7 +8,7 @@ class Tournament(models.Model):
     tournament_name = models.CharField(max_length=32, blank=False)
     tournament_category = models.CharField(max_length=32, blank=False, default="")
     tournament_country = models.CharField(max_length=32, blank=False, default='Guatemala')
-    tournament_winner = models.OneToOneField(Team, on_delete=models.CASCADE, blank=True,
+    tournament_winner = models.ForeignKey(Team, on_delete=models.CASCADE, blank=True,
                                              related_name='tournament_winner', null=True)
     current_date = models.IntegerField(blank=False, default=0)
     total_dates = models.IntegerField(blank=False, default=0)

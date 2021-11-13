@@ -17,7 +17,6 @@ class TournamentViewSet(viewsets.ModelViewSet):
         association_id = request.GET.get('association_id')
         today = datetime.datetime.today()
         queryset = Tournament.objects.filter(end_date__lt=today).filter(association=association_id)\
-            .values('id', 'tournament_name', 'tournament_category', 'tournament_winner', 'end_date')\
             .order_by('end_date')
         serializer = PastTournamentSerializer(queryset, many=True)
         return Response(serializer.data)
