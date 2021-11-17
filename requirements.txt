@@ -22,11 +22,9 @@ pathspec==0.5.9
 pipenv==2021.5.29
 platformdirs==2.1.0
 psycopg2==2.9.1
-pypiwin32==223
 python-dateutil==2.8.1
 python-dotenv==0.17.1
 pytz==2021.1
-pywin32==301
 PyYAML==5.4.1
 requests==2.26.0
 s3transfer==0.4.2
